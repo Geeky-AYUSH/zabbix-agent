@@ -74,7 +74,7 @@ INSTALLCURL(){
 INSTALLZABBIX(){
 	DETECTOS
 	if [ "$os" = "ubuntu" ]; then
-		version=`cat /etc/lsb-release | grep DISTRIB_CODENAME | tr "=" " " | awk '{print $2}'`
+		version=`cat /etc/*-release | grep DISTRIB_CODENAME | tr "=" " " | awk '{print $2}'`
 		if [ "$version" = "jammy" ]; then
 			cd
 			wget $ubuntu_jammy_zabbix_repo
